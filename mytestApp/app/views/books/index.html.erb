@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <style>
+    .card {
+      padding: 10px;
+    }
+
+  </style>
+
+</head>
+<body>
+
+<div class="container">
+  <h2>List of Books</h2>
+
+
+  <div class="row">
+
+  <% @list_of_books.each do |book| %>
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><%= book.title %></h5>
+          <h3> <%= book.author %></h3>
+          <p class="card-text"><%= book.description %></p>
+          <a href = "/books/<%= book.id %>" class = "btn btn-primary"> More Info </a>
+          <a href = "/books/<%= book.id %>" class = "btn btn-success"> Edit </a>
+          <a href = "/books/<%= book.id %>" class = "btn btn-danger"> Delete </a>
+        </div>
+      </div>
+    </div>
+
+  <% end %>
+
+  </div>
+
+
+
+</div>
+
+</body>
+
+</html>
